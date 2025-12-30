@@ -1,4 +1,5 @@
 import sqlite3
+import json
 from .user_models import Admin, Instructor, Student, PrivateMessage
 from .course_models import Course
 from .content_models import Assignment, LectureMaterial, Submission
@@ -21,6 +22,8 @@ class DatabaseManager:
     def create_tables(self):
         self.connect()
         cursor = self.conn.cursor()
+        
+        
         cursor.execute("PRAGMA foreign_keys = ON;")
 
         # Users
@@ -157,21 +160,28 @@ class DatabaseManager:
         self.connect()
         cursor = self.conn.cursor()
         
-        tables = ["users", "courses", "enrollments", "assignments", "assignment_grades",
-                  "materials", "quizzes", "quiz_attempts", "submissions", "messages", 
-                  "notifications", "logs", "announcements"]
+        # Clear all tables
+        tables = [
+            "users", "courses", "enrollments", "assignments", "assignment_grades",
+            "materials", "submissions", "messages", 
+            "notifications", "logs", "announcements"
+        ]
         for t in tables:
             cursor.execute(f"DELETE FROM {t}")
         
+        # Save Users
         for u in users:
             role = u.get_role()
             cursor.execute("INSERT INTO users (username, password, email, role) VALUES (?, ?, ?, ?)",
                            (u.get_username(), u._User__password, u.get_email(), role))
             
+            # Save Notifications
             for n in u.notifications:
                 cursor.execute("INSERT INTO notifications (username, message) VALUES (?, ?)", (u.get_username(), n))
             
 
+
+            # Save Inbox
             for m in u.inbox:
                 cursor.execute("""
                     INSERT INTO messages (sender, recipient, subject, body, timestamp, is_read) 
@@ -232,10 +242,11 @@ class DatabaseManager:
         self.connect()
         cursor = self.conn.cursor()
         
-        users_map = {} 
+        users_map = {} # username -> object
         courses = []
         logs = []
 
+        # Load Users
         cursor.execute("SELECT * FROM users")
         for row in cursor.fetchall():
             u = None
@@ -305,6 +316,7 @@ class DatabaseManager:
             cursor.execute("SELECT * FROM submissions WHERE course_cid = ?", (c_row['cid'],))
             for s_row in cursor.fetchall():
                 student_obj = users_map.get(s_row['student_username'])
+                # Need to find assignment object reference
                 assign_obj = next((a for a in course.assignments if a.title == s_row['assignment_title']), None)
                 
                 if student_obj and assign_obj:

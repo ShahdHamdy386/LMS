@@ -11,10 +11,8 @@ class LMS:
         self.courses = []
         self.logs = []
         
-        # Try to load state
         self.load_from_db()
         
-        # If no users found, init default data
         if not self.users:
              self.users = [
                 Admin("admin", "admin123", "admin@gmail.com"),
@@ -22,7 +20,7 @@ class LMS:
                 Student("student", "stud123", "student@gmail.com")
              ]
              self._init_data()
-             self.save_to_file() # Save initial state immediately
+             self.save_to_file()
 
     def save_to_file(self):
         self.db_manager.save_full_state(self.users, self.courses, self.logs)
@@ -35,11 +33,8 @@ class LMS:
                 self.log_event("Restored system state from database.")
         except Exception as e:
             print(f"Error loading database: {e}")
-            # If error, we might start empty or init default in __init__
 
     def _init_data(self):
-        # We need to make sure self.users has the elements we expect.
-        # users[1] is the Instructor "pro".
         c1 = Course("CS101", "Advanced Python", self.users[1])
         c1.assignments.append(Assignment("Final Project", "Build an LMS", "2025-01-01", 100))
         self.courses.append(c1)

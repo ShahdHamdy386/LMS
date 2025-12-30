@@ -9,7 +9,6 @@ class AdminDashboard(BaseWindow):
     def __init__(self, user, lms):
         self.user, self.lms = user, lms
         self.win = tk.Tk()
-        self.win = tk.Tk()
         self.win.title("Admin Only")
         self.maximize_window(self.win)
         self.setup_ui()

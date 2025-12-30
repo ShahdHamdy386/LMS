@@ -9,7 +9,6 @@ class InstructorDashboard(BaseWindow):
     def __init__(self, user, lms):
         self.user, self.lms = user, lms
         self.win = tk.Tk()
-        self.win = tk.Tk()
         self.win.title(f"Instructor: {user.get_username()}")
         self.maximize_window(self.win)
 
