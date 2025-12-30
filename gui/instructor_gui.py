@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox, ttk, simpledialog, filedialog
 from datetime import datetime
 from .base_window import BaseWindow
-from config import MAROON, BROWN, GREEN, RED, FONT
+from color import MAROON, BROWN, GREEN, RED, FONT
 from models.content_models import Assignment, LectureMaterial
 
 class InstructorDashboard(BaseWindow):

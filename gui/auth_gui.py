@@ -1,8 +1,8 @@
 import tkinter as tk
 from tkinter import messagebox
 from .base_window import BaseWindow
-from config import MAROON, BROWN, GREEN, FONT
-from utils import Validator
+from color import MAROON, BROWN, GREEN, FONT
+from validators import Validator
 
 class RegisterGUI(BaseWindow):
     def __init__(self, lms):

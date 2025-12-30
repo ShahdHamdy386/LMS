@@ -1,5 +1,4 @@
 from datetime import datetime
-import os
 from .database_manager import DatabaseManager
 from .user_models import Admin, Instructor, Student
 from .course_models import Course

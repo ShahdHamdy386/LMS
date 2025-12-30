@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox, ttk, simpledialog
 import os
 from .base_window import BaseWindow
-from config import MAROON, BROWN, GREEN, RED, FONT
+from color import MAROON, BROWN, GREEN, RED, FONT
 from models.user_models import CourseReview
 from models.content_models import Submission
 
