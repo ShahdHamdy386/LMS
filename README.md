@@ -158,11 +158,4 @@ Dependencies
 - sqlite3 (Built-in)
 - tkinter (Built-in)
 - re (For email validation)
-=======
-Shahd Hamdy - 120230070  
-Seif Fayed - 120230091
-Mariam Gamal - 120230012
-Ahmed Osama - 120230014
-Hala Mostafa - 120230148
-Marisia Michael - 120230233
->>>>>>> d610c6a7b65ef49c5aa341e9a6c08b63ce875ce6
+
