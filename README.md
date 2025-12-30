@@ -64,3 +64,62 @@ Default Credentials (for first-time boot):
 - Student: Username: student | Password: stud123
 
 4- SCREEN SHOTS:
+GENERAL: 
+- login gui
+![login gui](images/LOGIN.png)
+
+- create user
+![create user](images/CREATE%20USER.png)
+
+ADMIN:
+- admin dashboard and system overview
+![admin dashboard and system overview](images/admin/ADMIN%20DASHBOARD%20AND%20SYSTEM%20OVERVIEW.png)
+
+- course analysis
+![course analysis](images/admin/COURSE%20ANALYSIS.png)
+
+- course management
+![course management](images/admin/COURSE%20MANAGEMENT.png)
+
+- management reports
+![management reports](images/admin/MANAGEMENT%20REPORTS.png)
+
+- security logs
+![security logs](images/admin/SECURITY%20LOGS.png)
+
+STUDENT:
+- enroll courses
+![enroll courses](images/student/ENROLL%20COURSES.png)
+
+- inbox
+![inbox](images/student/INBOX.png)
+
+- messages
+![messages](images/student/MESSAGES.png)
+
+- my classrooms
+![my classrooms](images/student/MY%20CLASSROOMS.png)
+
+INSTRUCTOR:
+- add assignment
+![add assignment](images/INSTRUCTOR/ADD%20ASSIGNMENT.png)
+
+- add material
+![add material](images/INSTRUCTOR/ADD%20MATERIAL.png)
+
+- announcements 
+![announcements](images/INSTRUCTOR/ANNOUNCEMENTS.png)
+
+- grading center 
+![grading center](images/INSTRUCTOR/GRADING%20CENTER.png)
+
+- manage courses
+![manage courses](images/INSTRUCTOR/MANAGE%20COURSES.png)
+
+5- TEAM MEMBERS AND CONTRIBUTIONS:
+Shahd Hamdy - 120230070  
+Seif Fayed - 120230091
+Mariam Gamal - 120230012
+Ahmed Osama - 120230014
+Hala Mostafa - 120230148
+Marisia Michael - 120230233
